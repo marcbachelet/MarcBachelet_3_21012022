@@ -1,3 +1,7 @@
 @mixin font {
-    font-family: robot, sans-serif;
+    font-family: roboto;
+}
+
+@mixin font-logo {
+    font-family: shrikhand;
 }

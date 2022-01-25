@@ -23,7 +23,14 @@ header, main, footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 } 
+
+.header a {
+  position: absolute;
+  left: 30px;
+  color: #000;
+}
 
 .header__img {
   width: 294px;
@@ -32,7 +39,7 @@ header, main, footer {
 }
 
 /**********************************
-*********** Réserver **************
+***********   Main   **************
 **********************************/
 
 main {
@@ -109,6 +116,76 @@ form i.fa-map-marker-alt {
   background: linear-gradient(360deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 0.8) 100%);
   box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.4),
               -12px 12px 20px 1px rgba(0, 0, 0, 0.4);
+}
+
+.image-top img {
+  width: 100%;
+  height: 300px;
+}
+
+.background-page-menu {
+  @include background-page-menu;
+  position: relative;
+  margin-top: -40px;
+  padding: 0 20px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  z-index: 2;
+}
+
+.titre-menu-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titre-menu-page h2 {
+  @include font-logo;
+  font-size: 34px;
+}
+
+.carte h4 {
+  font-size: 20px;
+  font-weight: 200;
+  text-transform: uppercase;
+  border-bottom: 2px solid $color_3;
+  width: 10%;
+}
+
+.menu-item {
+  position: relative;
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.menu-item h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.menu-item p {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  color: rgb(70, 70, 70);
+}
+
+.menu-item span {
+  position: absolute;
+  right: 20px;
+  color: #000;
+  font-weight: 400;
+}
+
+.commander {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.commander button.btn-menu {
+  padding: 15px 60px;
 }
 
 /****************************************

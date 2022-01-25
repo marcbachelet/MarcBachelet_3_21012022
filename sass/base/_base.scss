@@ -19,9 +19,8 @@ header, main, footer {
   @include font;
 }
 
-header {
+.header {
   display: flex;
-  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 } 
@@ -121,13 +120,12 @@ form i.fa-map-marker-alt {
   display: flex;
   flex-flow: column;
   margin-bottom: 20px;
-  padding-left: 20px;
+  padding-left: 25px;
   width: 95%;
 }
 
 .fonction h2 {
   font-size: 38px;
-  padding-left: 20px;
 }
 
 .fonctionnement {

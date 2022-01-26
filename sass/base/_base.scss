@@ -39,7 +39,7 @@ header, main, footer {
 }
 
 /**********************************
-***********   Main   **************
+****   Main Reservation   *********
 **********************************/
 
 main {
@@ -95,7 +95,7 @@ form i.fa-map-marker-alt {
 }
 
 .recherche input:focus {
-  outline: none;
+  border: 1px solid $color_2;
 }
 
 .btn button {
@@ -106,21 +106,27 @@ form i.fa-map-marker-alt {
   border-color: transparent;
   border-radius: 50px;
   color: #fff;
-  box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.3),
-              -12px 12px 20px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.2),
+              -12px 12px 20px 1px rgba(0, 0, 0, 0.2); 
+              transition: box-shadow 200ms;
 }
 
 .btn button:hover {
   cursor: pointer;
   background: hsla(267, 66%, 60%, 1);
-  background: linear-gradient(360deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 0.8) 100%);
+  background: linear-gradient(360deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 0.6) 100%);
   box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.4),
               -12px 12px 20px 1px rgba(0, 0, 0, 0.4);
 }
 
+/*******************************************
+************ Page Menu *********************
+*******************************************/
+
 .image-top img {
   width: 100%;
   height: 300px;
+  object-fit: cover;
 }
 
 .background-page-menu {
@@ -322,8 +328,22 @@ form i.fa-map-marker-alt {
   padding-left: 20px;
 }
 
-.nom .fa-heart {
-  padding-right: 20px;
+.nom i.far {
+  margin-right: 20px;
+  transition: color 300ms ease-in;
+}
+
+.nom i.fas {
+  display: none;
+}
+
+.nom i.far:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0);
+}
+
+.nom i.far:active {
+  color: $color_2;
 }
 
 /********************************
@@ -364,7 +384,7 @@ footer {
 }
 
 .liens_footer a:hover {
-  color: #2f6dff;
+  color: $color_1;
 }
 
 .liens_footer i {

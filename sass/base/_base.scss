@@ -13,7 +13,7 @@
 *******************************/
 
 header, main, footer {
-  max-width: 540px;
+  max-width: 1440px;
   margin: 10px auto; 
   padding: 0 10px;
   @include font;
@@ -101,8 +101,7 @@ form i.fa-map-marker-alt {
 .btn button {
   padding: 20px;
   font-size: 22px;
-  background: hsla(267, 66%, 60%, 1);
-  background: linear-gradient(360deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 1) 100%);
+  background: linear-gradient(45deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 1) 100%);
   border-color: transparent;
   border-radius: 50px;
   color: #fff;
@@ -113,8 +112,7 @@ form i.fa-map-marker-alt {
 
 .btn button:hover {
   cursor: pointer;
-  background: hsla(267, 66%, 60%, 1);
-  background: linear-gradient(360deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 0.6) 100%);
+  background: linear-gradient(45deg, hsla(267, 66%, 60%, 1) 0%, hsla(317, 100%, 74%, 0.6) 100%);
   box-shadow: 12px 12px 20px 1px rgba(0, 0, 0, 0.4),
               -12px 12px 20px 1px rgba(0, 0, 0, 0.4);
 }
@@ -122,6 +120,10 @@ form i.fa-map-marker-alt {
 /*******************************************
 ************ Page Menu *********************
 *******************************************/
+
+.header .fa-arrow-left:hover {
+  color: $color_1;
+}
 
 .image-top img {
   width: 100%;
@@ -226,8 +228,13 @@ form i.fa-map-marker-alt {
   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.2);
 }
 
-.fonctionnement p:nth-of-type(3) {
+.fonctionnement p:hover {
+  cursor: pointer;
   background-color: #eee4fa;
+}
+
+.fonctionnement p:hover > i {
+  color: $color_1;
 }
 
 .fonctionnement span.number {
@@ -245,14 +252,6 @@ form i.fa-map-marker-alt {
   padding: 0 30px;
 }
 
-.fonctionnement i.fa-mobile-alt,
-.fonctionnement i.fa-list-ul {
-  color: rgb(149, 149, 149);
-} 
-
-.fonctionnement i.fa-store {
-  color: $color_1;
-}
 
 /*****************************************
 ************* Restaurant *****************
@@ -269,23 +268,27 @@ form i.fa-map-marker-alt {
 .restaurant h2 {
   align-self: flex-start;
   padding-left: 20px;
-  text-align: left;
   font-size: 38px;
 }
 
-.restaurant .palette,
-.restaurant .note,
-.restaurant .francaise,
-.restaurant .delice {
-  margin: 0 0 20px 0;
+.restaurant .resto {
   width: 95%;
+}
+
+.restaurant .resto-nom {
+  margin-bottom: 20px;
   background-color: #fff;
   border-radius: 25px;
 }
 
+.restaurant .resto-nom a {
+  color: #000;
+  text-decoration: none;
+}
+
 .restaurant .img_resto img {
   width: 100%;
-  height: 250px;
+  height: 340px;
   object-fit: cover;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -361,7 +364,6 @@ footer {
 
 .footer p {
   margin: 0;
-  padding-bottom: 20px;
   @include font-logo;
   font-size: 30px;
   color: #fff;
@@ -393,3 +395,69 @@ footer {
   padding: 10px 5px 0 0;
   color: #fff;
 }
+
+@media only screen and (min-width: 768px) {
+  .carte-resto {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carte {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .resp-max {
+    margin:0 auto;
+    width: 75%;
+  }
+
+  .resto {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  } 
+
+  .restaurant .resto-nom {
+    width: 48%; 
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .liens_footer {
+    padding-left: 50px;
+  }
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+  .carte-resto {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .carte {
+    width: 30%;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .liens_footer div, .liens_footer a {
+    display: inline-block;
+    padding-left: 20px;
+  }
+}
+
+

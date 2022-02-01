@@ -145,20 +145,59 @@ form i.fa-map-marker-alt {
   font-size: 34px;
 }
 
+.carte {
+  display: flex;
+  flex-flow: column;
+}
+
 .carte h4 {
   font-size: 20px;
   font-weight: 200;
   text-transform: uppercase;
   border-bottom: 2px solid #99e2d0;
-  width: 10%;
+  width: 4%;
+}
+
+.menu-resto {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  animation: chargement-plat-decale 800ms ease-in;
+}
+
+@keyframes chargement-plat-decale {
+  0% {
+    opacity: 0;
+    transform: translatey(100px);
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}
+.menu-item:nth-of-type(2) {
+  animation-delay: 200ms;
+}
+
+.menu-item:nth-of-type(3) {
+  animation-delay: 400ms;
+}
+
+.menu-item:nth-of-type(4) {
+  animation-delay: 800ms;
 }
 
 .menu-item {
+  display: flex;
+  flex-flow: column wrap;
   position: relative;
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 12px;
+  width: 100%;
+  transition: width 1s;
 }
 
 .menu-item h5 {
@@ -167,16 +206,70 @@ form i.fa-map-marker-alt {
 }
 
 .menu-item p {
+  position: relative;
   margin: 5px 0 0 0;
   font-size: 16px;
   color: #464646;
+  width: 100%;
 }
 
-.menu-item span {
+.menu-item span.texte {
+  display: inline-block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-item span.prix {
+  display: inline-block;
   position: absolute;
-  right: 20px;
+  right: 0;
   color: #000;
   font-weight: 400;
+}
+
+.menu-resto .selection_plat {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  background-color: #99e2d0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  visibility: hidden;
+  transition: width 1s;
+}
+
+.menu-resto .selection_plat span.centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-resto .selection_plat i {
+  color: #fff;
+}
+
+.menu-resto:hover .menu-item {
+  cursor: pointer;
+  width: 80%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.menu-resto:hover .selection_plat {
+  cursor: pointer;
+  visibility: visible;
+  width: 20%;
+  Height: 100%;
+}
+
+.menu-resto:hover .selection_plat i {
+  transform: rotate(720deg);
+  transition-duration: 1s;
 }
 
 .commander {

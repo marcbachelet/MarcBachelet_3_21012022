@@ -9,10 +9,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 /*******************************
+********** Spinner *************
+*******************************/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4e4e4e;
+  animation: disparition 2s 3s linear forwards;
+}
+
+.spinner .loader {
+  margin: 0;
+  padding: 0;
+  @include font-logo;
+  font-size: 48px;
+  animation: load-spinner 3000ms linear;
+}
+
+span.prems {
+  color: $color_1;
+}
+
+span.deux {
+  color: $color_2;
+}
+
+span.trois {
+  color: $color_3;
+}
+
+span.dots {
+  color: $color_3;
+}
+
+@keyframes load-spinner {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  10%{
+    transform: rotate(72deg) scale(.1);
+    opacity: .1;
+  }
+  20% {
+    transform: rotate(144deg) scale(.2);
+    opacity: .2;
+  }
+  30% {
+    transform: rotate(216deg) scale(.3);
+    opacity: .3;
+  }
+  40% {
+    transform: rotate(288deg) scale(.4);
+    opacity: .4;
+  }
+  50% {
+    transform: rotate(360deg) scale(.5);
+    opacity: .5;
+  }
+  60% {
+    transform: rotate(432deg) scale(.6);
+    opacity: .6;
+  }
+  70% {
+    transform: rotate(504deg) scale(.7);
+    opacity: .7;
+  }
+  80% {
+    transform: rotate(576deg) scale(.8);
+    opacity: .8;
+  }
+  90% {
+    transform: rotate(648deg) scale(.9);
+    opacity: .9;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes disparition {
+  0% {
+    transform: translatey(0px);
+  }
+  100% {
+    transform: translatey(-70px);
+    width: 100vw;
+    height: 0;
+  }
+}
+
+/*******************************
 ********* Header ***************
 *******************************/
 
 header, main, footer {
+  min-width: 320px;
   max-width: 1440px;
   margin: 10px auto; 
   padding: 0 10px;
@@ -28,13 +130,22 @@ header, main, footer {
 
 .header a {
   position: absolute;
+  text-decoration: none;
   left: 30px;
   color: #000;
 }
 
+.header .fa-arrow-left {
+  display: none;
+}
+
+.header .fa-arrow-left.resp {
+  display: inline;
+}
+
 .header__img {
-  width: 294px;
-  height: 48px;
+  width: 147px;
+  height: 24px;
   text-align: center;
 }
 
@@ -161,8 +272,10 @@ form i.fa-map-marker-alt {
   font-size: 20px;
   font-weight: 200;
   text-transform: uppercase;
+}
+
+h4 span.underline {
   border-bottom: 2px solid $color_3;
-  width: 4%;
 }
 
 .menu-resto {
@@ -189,15 +302,15 @@ form i.fa-map-marker-alt {
   }
 }
 
-.menu-item:nth-of-type(2) {
+.menu-resto:nth-of-type(2) {
   animation-delay: 200ms;
 }
 
-.menu-item:nth-of-type(3) {
+.menu-resto:nth-of-type(3) {
   animation-delay: 400ms;
 }
 
-.menu-item:nth-of-type(4) {
+.menu-resto:nth-of-type(4) {
   animation-delay: 800ms;
 }
 
@@ -440,9 +553,7 @@ form i.fa-map-marker-alt {
   color: rgba(255, 255, 255, 0);
 }
 
-.nom i.far:active {
-  color: $color_2;
-}
+
 
 /********************************
 *********** Footer **************
@@ -491,7 +602,26 @@ footer {
   color: #fff;
 }
 
+/*********************************************
+*********** Media Queries ********************
+*********************************************/
+
 @media only screen and (min-width: 768px) {
+
+  .header .fa-arrow-left.resp {
+    display: none;
+  }
+
+  .header .fa-arrow-left {
+    display: inline;
+  }
+
+  .header__img {
+    width: 294px;
+    height: 48px;
+    text-align: center;
+  }
+
   .carte-resto {
     display: flex;
     flex-direction: column;

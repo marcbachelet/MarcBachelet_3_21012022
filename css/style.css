@@ -7,9 +7,108 @@
 }
 
 /*******************************
+********** Spinner *************
+*******************************/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4e4e4e;
+  animation: disparition 2s 3s linear forwards;
+}
+
+.spinner .loader {
+  margin: 0;
+  padding: 0;
+  font-family: shrikhand;
+  font-size: 48px;
+  animation: load-spinner 3000ms linear;
+}
+
+span.prems {
+  color: #9356DC;
+}
+
+span.deux {
+  color: #ff79da;
+}
+
+span.trois {
+  color: #99e2d0;
+}
+
+span.dots {
+  color: #99e2d0;
+}
+
+@keyframes load-spinner {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: rotate(72deg) scale(0.1);
+    opacity: 0.1;
+  }
+  20% {
+    transform: rotate(144deg) scale(0.2);
+    opacity: 0.2;
+  }
+  30% {
+    transform: rotate(216deg) scale(0.3);
+    opacity: 0.3;
+  }
+  40% {
+    transform: rotate(288deg) scale(0.4);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(360deg) scale(0.5);
+    opacity: 0.5;
+  }
+  60% {
+    transform: rotate(432deg) scale(0.6);
+    opacity: 0.6;
+  }
+  70% {
+    transform: rotate(504deg) scale(0.7);
+    opacity: 0.7;
+  }
+  80% {
+    transform: rotate(576deg) scale(0.8);
+    opacity: 0.8;
+  }
+  90% {
+    transform: rotate(648deg) scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes disparition {
+  0% {
+    transform: translatey(0px);
+  }
+  100% {
+    transform: translatey(-70px);
+    width: 100vw;
+    height: 0;
+  }
+}
+/*******************************
 ********* Header ***************
 *******************************/
 header, main, footer {
+  min-width: 320px;
   max-width: 1440px;
   margin: 10px auto;
   padding: 0 10px;
@@ -25,13 +124,22 @@ header, main, footer {
 
 .header a {
   position: absolute;
+  text-decoration: none;
   left: 30px;
   color: #000;
 }
 
+.header .fa-arrow-left {
+  display: none;
+}
+
+.header .fa-arrow-left.resp {
+  display: inline;
+}
+
 .header__img {
-  width: 294px;
-  height: 48px;
+  width: 147px;
+  height: 24px;
   text-align: center;
 }
 
@@ -154,8 +262,10 @@ form i.fa-map-marker-alt {
   font-size: 20px;
   font-weight: 200;
   text-transform: uppercase;
+}
+
+h4 span.underline {
   border-bottom: 2px solid #99e2d0;
-  width: 4%;
 }
 
 .menu-resto {
@@ -180,15 +290,15 @@ form i.fa-map-marker-alt {
     opacity: 1;
   }
 }
-.menu-item:nth-of-type(2) {
+.menu-resto:nth-of-type(2) {
   animation-delay: 200ms;
 }
 
-.menu-item:nth-of-type(3) {
+.menu-resto:nth-of-type(3) {
   animation-delay: 400ms;
 }
 
-.menu-item:nth-of-type(4) {
+.menu-resto:nth-of-type(4) {
   animation-delay: 800ms;
 }
 
@@ -427,10 +537,6 @@ form i.fa-map-marker-alt {
   color: rgba(255, 255, 255, 0);
 }
 
-.nom i.far:active {
-  color: #ff79da;
-}
-
 /********************************
 *********** Footer **************
 ********************************/
@@ -477,7 +583,24 @@ footer {
   color: #fff;
 }
 
+/*********************************************
+*********** Media Queries ********************
+*********************************************/
 @media only screen and (min-width: 768px) {
+  .header .fa-arrow-left.resp {
+    display: none;
+  }
+
+  .header .fa-arrow-left {
+    display: inline;
+  }
+
+  .header__img {
+    width: 294px;
+    height: 48px;
+    text-align: center;
+  }
+
   .carte-resto {
     display: flex;
     flex-direction: column;

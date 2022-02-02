@@ -187,11 +187,11 @@ main {
 }
 
 form i.fa-map-marker-alt {
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .recherche input {
-  width: 250px;
+  width: 200px;
   height: 32px;
   border: none;
   background-color: #dddddd;
@@ -469,6 +469,7 @@ h4 span.underline {
 
 .restaurant .resto-nom {
   margin-bottom: 20px;
+  position: relative;
   background-color: #fff;
   border-radius: 25px;
 }
@@ -484,10 +485,6 @@ h4 span.underline {
   object-fit: cover;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-}
-
-.restaurant .palette, .restaurant .note {
-  position: relative;
 }
 
 .palette p.nouveau, .note p.nouveau {
@@ -598,6 +595,19 @@ footer {
 /*********************************************
 *********** Media Queries ********************
 *********************************************/
+@media only screen and (max-width: 400px) {
+  .nom i.far {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+  }
+
+  .nom i.fas {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .header .fa-arrow-left.resp {
     display: none;

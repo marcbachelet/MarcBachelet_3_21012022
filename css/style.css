@@ -506,6 +506,7 @@ h4 span.underline {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .nom h3 {
@@ -524,17 +525,28 @@ h4 span.underline {
 }
 
 .nom i.far {
-  margin-right: 20px;
-  transition: color 300ms ease-in;
+  position: absolute;
+  right: 20px;
+  transition: opacity;
 }
 
 .nom i.fas {
-  display: none;
+  position: absolute;
+  right: 20px;
+  opacity: 0;
+  transition: color 0.3s linear, transform 1s linear;
 }
 
 .nom i.far:hover {
   cursor: pointer;
-  color: rgba(255, 255, 255, 0);
+  opacity: 0;
+}
+
+.nom i.fas:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #ff79da;
+  transform: scale(1.1);
 }
 
 /********************************

@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
   width: 100vw;
   height: 100vh;
   background-color: #4e4e4e;
@@ -28,7 +29,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: shrikhand;
-  font-size: 48px;
+  font-size: 44px;
   animation: load-spinner 3000ms linear;
 }
 
@@ -97,6 +98,8 @@ span.dots {
 @keyframes disparition {
   0% {
     transform: translatey(0px);
+    width: 100vw;
+    height: 100vh;
   }
   100% {
     transform: translatey(-70px);
